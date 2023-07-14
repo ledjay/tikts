@@ -9,10 +9,6 @@ export default function AddTickt({ tikts, setTikts }: any) {
   const [amount, setAmout] = useState();
   const [vendor, setVendor] = useState();
 
-  useEffect(() => {
-    //console.log(setTikts);
-  }, [setTikts]);
-
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
@@ -21,18 +17,16 @@ export default function AddTickt({ tikts, setTikts }: any) {
       vendor: vendor,
       uid: user.uid,
       createdAt: Date.now(),
+      status: "active",
     };
     const { result, error } = await editData("tikts", data);
 
     const fetchData = async () => {
       const data = await fetchTikts("tikts", user.uid).then((query) => {
-        //console.log(query);
-
         setTikts(query.result);
       });
     };
 
-    // call the function
     fetchData().catch(console.error);
 
     if (error) {

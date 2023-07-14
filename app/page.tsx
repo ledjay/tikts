@@ -51,8 +51,8 @@ export default function Home() {
   };
 
   return (
-    <div className=" ">
-      <div className="border w-full max-w-2xl rounded-xl shadow-md p-10 bg-gradient-to-b from-white to-slate-50  ">
+    <>
+      <div className="border w-full max-w-2xl rounded-xl shadow-md p-10 bg-gradient-to-b from-white to-slate-50 self-center ">
         <div className="tabs w-full flex justify-stretch">
           <a
             className={`tab tab-bordered tab-lg ${
@@ -175,6 +175,6 @@ export default function Home() {
           </button>
         </form>
       </div>
-    </div>
+    </>
   );
 }

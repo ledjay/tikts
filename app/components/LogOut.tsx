@@ -11,7 +11,7 @@ export default function LogOut() {
   const router = useRouter();
 
   return (
-    <div className="fixed top-0 right-0 p-4">
+    <div className="flex justify-end">
       <a
         className="btn"
         onClick={() => {
@@ -26,7 +26,7 @@ export default function LogOut() {
             });
         }}
       >
-        x
+        logout
       </a>
     </div>
   );

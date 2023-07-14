@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="min-h-screen min-w-screen flex justify-center items-center bg-slate-900  p-4 ">
+        <div className="min-h-screen min-w-screen flex justify-center  bg-slate-900  p-4 ">
           <AuthContextProvider>{children}</AuthContextProvider>
         </div>
       </body>

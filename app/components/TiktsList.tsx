@@ -4,7 +4,7 @@ import { addData, editData } from "@/firebase/addData";
 import { useAuthContext } from "../context/AuthContext";
 import { fetchTikts } from "@/firebase/fetchData";
 import TiktCard from "./TiktCard";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function TiktsList({ tikts, setTikts }: any) {
   const { user }: any = useAuthContext();
@@ -23,16 +23,35 @@ export default function TiktsList({ tikts, setTikts }: any) {
   }, [user, setTikts]);
 
   return (
-    <div className="flex flex-col gap-4 py-20">
+    <div className="flex flex-col gap-4 pb-20 pt-4">
       <AnimatePresence>
         {tikts.map((tikt: any) => (
-          <TiktCard
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
             key={tikt.createdAt}
-            vendor={tikt.vendor}
-            amount={tikt.amount}
-            createdAt={tikt.createdAt}
-          />
+          >
+            <TiktCard
+              id={tikt.id}
+              vendor={tikt.vendor}
+              amount={tikt.amount}
+              createdAt={tikt.createdAt}
+              status={tikt.status}
+              setTikts={setTikts}
+            />
+          </motion.div>
         ))}
+        {tikts.length === 0 && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white/80 rounded-md p-4 "
+          >
+            No tikt for the moment
+          </motion.div>
+        )}
       </AnimatePresence>
     </div>
   );
