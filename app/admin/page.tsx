@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import AddTickt from "../components/AddTickt";
 import TiktsList from "../components/TiktsList";
 import TiktCard from "../components/TiktCard";
+import VocalTickt from "../components/VocalTickt";
 
 export default function Page() {
   const [tikts, setTikts] = useState([]);
@@ -21,6 +22,7 @@ export default function Page() {
       <AddTickt tikts={tikts} setTikts={setTikts} />
       <LogOut />
       <TiktsList tikts={tikts} setTikts={setTikts} />
+      <VocalTickt tikts={tikts} setTikts={setTikts} />
     </div>
   );
 }

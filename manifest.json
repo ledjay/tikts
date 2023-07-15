@@ -1,0 +1,32 @@
+{
+  "theme_color": "#1fd4c0",
+  "background_color": "#259409",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Advice app",
+  "short_name": "Advice App",
+  "description": "A random advice generator",
+  "icons": [
+    {
+      "src": "/icon-192×192.png",
+      "sizes": "192×192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-256×256.png",
+      "sizes": "256×256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-384×384.png",
+      "sizes": "384×384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512×512.png",
+      "sizes": "512×512",
+      "type": "image/png"
+    }
+  ]
+}
