@@ -19,7 +19,7 @@ export default function Page() {
   }, [user, router]);
   return (
     <div className="w-full ">
-      <AddTickt tikts={tikts} setTikts={setTikts} />
+      {/* <AddTickt tikts={tikts} setTikts={setTikts} /> */}
       <LogOut />
       <TiktsList tikts={tikts} setTikts={setTikts} />
       <VocalTickt tikts={tikts} setTikts={setTikts} />

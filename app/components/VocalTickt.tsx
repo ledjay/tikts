@@ -5,6 +5,7 @@ import { useAuthContext } from "../context/AuthContext";
 import { fetchTikts } from "@/firebase/fetchData";
 import IconCancelCircle from "./icons/IconCancelCircle";
 import IconCheckCircle from "./icons/IconCheckCircle";
+import IconPlusCircle from "./icons/IconPlusCircle";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function VocalTickt({ tikts, setTikts }: any) {
@@ -104,6 +105,21 @@ export default function VocalTickt({ tikts, setTikts }: any) {
             </div>
           </motion.form>
         </AnimatePresence>
+      )}
+      {setTikts && !modalVisible && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.2 }}
+          className="fixed bottom-4 right-4 bg-white rounded-full"
+        >
+          <IconPlusCircle
+            className="w-14 h-14"
+            onClick={(e) => {
+              setModalVisible(true);
+            }}
+          />
+        </motion.div>
       )}
     </>
   );
